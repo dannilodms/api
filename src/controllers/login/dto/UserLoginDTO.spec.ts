@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import UserLoginParserImpl from './UserLogin';
+import UserLoginParserImpl from './UserLoginDTO';
 
 const makeSut = () => {
   const sut = new UserLoginParserImpl();

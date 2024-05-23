@@ -21,28 +21,28 @@ export function noContent(): HttpResponse {
   } as HttpResponse;
 }
 
-export function badRequest(error: string[] | string): HttpResponse {
+export function badRequest(error: string[] | string | object): HttpResponse {
   return {
     statusCode: 400,
     body: error
   } as HttpResponse;
 }
 
-export function unauthorized(error: string[] | string): HttpResponse {
+export function unauthorized(error: string[] | string | object): HttpResponse {
   return {
     statusCode: 401,
     body: error
   } as HttpResponse;
 }
 
-export function forbidden(error: string[] | string): HttpResponse {
+export function forbidden(error: string[] | string | object): HttpResponse {
   return {
     statusCode: 403,
     body: error
   } as HttpResponse;
 }
 
-export function notFound(error: string[] | string): HttpResponse {
+export function notFound(error: string[] | string | object): HttpResponse {
   return {
     statusCode: 404,
     body: error
@@ -52,6 +52,6 @@ export function notFound(error: string[] | string): HttpResponse {
 export function serverError(error: Error): HttpResponse {
   return {
     statusCode: 500,
-    body: error.message || error
+    body: { error: error.message || error }
   } as HttpResponse;
 }
